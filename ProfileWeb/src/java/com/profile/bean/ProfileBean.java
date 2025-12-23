@@ -2,9 +2,6 @@ package com.profile.bean;
 
 import java.io.Serializable;
 
-/**
- * JavaBean class to represent Profile data
- */
 public class ProfileBean implements Serializable {
     private static final long serialVersionUID = 1L;
     
@@ -24,7 +21,7 @@ public class ProfileBean implements Serializable {
     public ProfileBean() {
     }
     
-    // Parameterized constructor
+    // Normal constructor
     public ProfileBean(String studentId, String fullName, String email, String phone, 
                       String programme, int yearOfStudy, String hobby, String address) {
         this.studentId = studentId;
@@ -134,3 +131,4 @@ public class ProfileBean implements Serializable {
                 '}';
     }
 }
+
