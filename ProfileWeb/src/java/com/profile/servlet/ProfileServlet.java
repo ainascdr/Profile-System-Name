@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-//@WebServlet("/ProfileServlet")
 public class ProfileServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ProfileDAO profileDAO;
@@ -84,9 +83,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     }
 }
     
-    /**
-     * Add a new profile
-     */
+    // Add a new profile
     private void addProfile(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
     
@@ -145,9 +142,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     System.out.println("=== addProfile method completed ===");
 }
     
-    /**
-     * List all profiles
-     */
+    // List all profiles
   private void listProfiles(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
     List<ProfileBean> profiles = profileDAO.getAllProfiles();
@@ -156,9 +151,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
 
 }
 
-    /**
-     * Show edit form for a profile
-     */
+    // Show edit form for a profile
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -167,9 +160,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         request.getRequestDispatcher("editProfile.jsp").forward(request, response);
     }
     
-    /**
-     * Update an existing profile
-     */
+    // Update an existing profile
     private void updateProfile(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -198,9 +189,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         listProfiles(request, response);
     }
     
-    /**
-     * Delete a profile
-     */
+    // Delete a profile
     private void deleteProfile(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -215,9 +204,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         listProfiles(request, response);
     }
     
-    /**
-     * Search profiles by name or student ID
-     */
+    // Search profiles by name or student ID
   private void searchProfiles(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
     System.out.println("=== searchProfiles() CALLED ===");
@@ -241,9 +228,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     System.out.println("Forward completed");  // Add this log
 }
 
-    /**
-     * Filter profiles by programme
-     */
+    // Filter profiles by programme
     private void filterProfiles(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          System.out.println("=== filterProfiles() CALLED ===");
@@ -266,4 +251,5 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     request.getRequestDispatcher("viewProfile.jsp").forward(request, response);
     System.out.println("Forward completed");
     }
+
 }
