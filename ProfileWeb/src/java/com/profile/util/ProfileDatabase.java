@@ -6,14 +6,12 @@ import java.sql.SQLException;
 
 public class ProfileDatabase {
     
-    // Java DB (Derby) connection settings - NO DOWNLOAD NEEDED!
     private static final String URL = "jdbc:derby://localhost:1527/student_profile";
     private static final String USER = "root";
     private static final String PASSWORD = " ";
     
     static {
         try {
-            // Derby driver is already included in NetBeans!
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
             System.err.println("Derby JDBC Driver not found!");
@@ -35,3 +33,4 @@ public class ProfileDatabase {
         }
     }
 }
+
