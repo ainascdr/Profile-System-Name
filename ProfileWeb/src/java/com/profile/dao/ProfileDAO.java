@@ -7,14 +7,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Data Access Object for Profile operations
- */
+// Data Access Object for Profile operations
 public class ProfileDAO {
     
-    /**
-     * Insert a new profile into the database
-     */
+    // Insert a new profile into the database
     public boolean insertProfile(ProfileBean profile) {
         String sql = "INSERT INTO profile (student_id, full_name, email, phone, programme, year_of_study, hobby, address) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
@@ -39,9 +35,7 @@ public class ProfileDAO {
         }
     }
     
-    /**
-     * Get all profiles from the database
-     */
+    // Get all profiles from the database
     public List<ProfileBean> getAllProfiles() {
         List<ProfileBean> profiles = new ArrayList<>();
         String sql = "SELECT * FROM profile ORDER BY date_created DESC";
@@ -62,9 +56,7 @@ public class ProfileDAO {
         return profiles;
     }
     
-    /**
-     * Search profiles by name or student ID
-     */
+    // Search profiles by name or student ID
     public List<ProfileBean> searchProfiles(String searchTerm) {
     List<ProfileBean> profiles = new ArrayList<>();
     String sql = "SELECT * FROM profile WHERE full_name LIKE ? OR student_id LIKE ? ORDER BY date_created DESC";
@@ -90,9 +82,7 @@ public class ProfileDAO {
 }
 
     
-    /**
-     * Get a single profile by ID
-     */
+    // Get a single profile by ID
     public ProfileBean getProfileById(int id) {
         String sql = "SELECT * FROM profile WHERE id = ?";
         
@@ -113,9 +103,7 @@ public class ProfileDAO {
         return null;
     }
     
-    /**
-     * Update an existing profile
-     */
+    // Update an existing profile
     public boolean updateProfile(ProfileBean profile) {
         String sql = "UPDATE profile SET student_id = ?, full_name = ?, email = ?, phone = ?, programme = ?, year_of_study = ?, hobby = ?, address = ? WHERE id = ?";
         
@@ -141,9 +129,7 @@ public class ProfileDAO {
         }
     }
     
-    /**
-     * Delete a profile by ID
-     */
+    // Delete a profile by ID
     public boolean deleteProfile(int id) {
         String sql = "DELETE FROM profile WHERE id = ?";
         
@@ -160,9 +146,7 @@ public class ProfileDAO {
         }
     }
     
-    /**
-     * Filter profiles by programme
-     */
+    / Filter profiles by programme
     public List<ProfileBean> filterByProgramme(String programme) {
         List<ProfileBean> profiles = new ArrayList<>();
         String sql = "SELECT * FROM profile WHERE programme = ? ORDER BY date_created DESC";
@@ -185,9 +169,7 @@ public class ProfileDAO {
         return profiles;
     }
     
-    /**
-     * Helper method to extract ProfileBean from ResultSet
-     */
+    // Helper method to extract ProfileBean from ResultSet
     private ProfileBean extractProfileFromResultSet(ResultSet rs) throws SQLException {
         ProfileBean profile = new ProfileBean();
         profile.setId(rs.getInt("id"));
@@ -202,4 +184,5 @@ public class ProfileDAO {
         profile.setDateCreated(rs.getTimestamp("date_created").toString());
         return profile;
     }
+
 }
