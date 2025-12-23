@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile System - Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFB6D9 0%, #FFC0CB 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            padding: 60px 50px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            color: #C71585;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .features {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #FF69B4;
+        }
+
+        .features h3 {
+            color: #C71585;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #FF69B4 0%, #FFB6D9 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 15px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .feature-item span {
+            font-size: 1.05em;
+        }
+
+        .description {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 30px 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #FF69B4 0%, #FFB6D9 100%);
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #FF69B4;
+            border: 2px solid #FF69B4;
+        }
+
+        .btn-secondary:hover {
+            background: #FF69B4;
+            color: white;
+        }
+
+        .footer-text {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .welcome-icon {
+                font-size: 3.5em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-icon">🎓</div>
+        
+        <h1>Personal Profile System</h1>
+        <p class="subtitle">Create Your Unique Profile</p>
+
+        <div class="description">
+            Welcome to the Personal Profile System! Share your information, hobbies and achievements. Let's get started on building your amazing profile!
+        </div>
+
+        <div class="features">
+            <h3>What You'll Get:</h3>
+            <div class="feature-item"><span>Create your personal profile easily</span></div>
+            <div class="feature-item"><span>Share your academic details and achievements</span></div>
+            <div class="feature-item"><span>Showcase your interests and hobbies</span></div>
+            <div class="feature-item"><span>Tell your story in your own words</span></div>
+            <div class="feature-item"><span>View all profiles in the database</span></div>
+        </div>
+
+        <div class="button-group">
+            <a href="profilejsp.jsp" class="cta-button">✨ Create Profile</a>
+            <a href="ProfileServlet?action=list" class="cta-button btn-secondary">👥 View All Profiles</a>
+        </div>
+
+        <div class="footer-text">
+            CSC584 Assignment | Personal Profile Web Application
+        </div>
+    </div>
+</body>
+</html>
